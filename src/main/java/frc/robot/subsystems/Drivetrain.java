@@ -57,9 +57,9 @@ public class Drivetrain extends Subsystem {
 
   public void drivePedaleVolant(double vitesse, double rotation){
     if (rotation > 0){
-      driveTank(vitesse, vitesse - rotation);
+      driveTank(vitesse, (1 - rotation) * vitesse);
     }else{
-      driveTank(vitesse + rotation, vitesse);
+      driveTank((1 + rotation) * vitesse, vitesse);
     }
   }
 
