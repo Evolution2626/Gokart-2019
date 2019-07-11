@@ -12,15 +12,29 @@ package frc.robot;
  */
 public interface RobotMap {
 
-    int MOTEUR_AVANT_DROIT = 0;
-    int MOTEUR_AVANT_GAUCHE = 0;
-    int MOTEUR_ARRIERE_DROIT = 0;
-    int MOTEUR_ARRIERE_GAUCHE = 1;
+    interface CAN {
+        int MOTEUR_AVANT_DROIT = 0;
+        int MOTEUR_AVANT_GAUCHE = 0; 
+    }
 
+    interface PWN {
+        int MOTEUR_ARRIERE_DROIT = 0;
+        int MOTEUR_ARRIERE_GAUCHE = 1;
+    }
+   
+    interface ANALOG {
+        int PEDALE_AVANCER = 0;
+        int PEDALE_RECULER = 1;
+        int VOLANT = 2;        
+    }
 
-    int PEDALE_AVANCER = 0;
-    int PEDALE_RECULER = 1;
-    int VOLANT = 2;
-    int SHIFTER_GAUCHE = 0;
-    int SHIFTER_DROIT = 1;
+    interface DIO {
+        int SHIFTER_GAUCHE_BOUTON = 0;
+        int SHIFTER_DROIT_BOUTON = 1;
+    }
+
+    interface PCM {
+        int SHIFTERS_FORWARD = 0;
+        int SHIFTERS_REVERSE = 1;
+    }
 }

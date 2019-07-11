@@ -27,11 +27,11 @@ public class VolantPedaleController {
     
     public VolantPedaleController(){
 
-        pedaleAvancer = new AnalogInput(RobotMap.PEDALE_AVANCER);
-        pedaleReculer = new AnalogInput(RobotMap.PEDALE_RECULER);
-        volant = new AnalogInput(RobotMap.VOLANT);
-        shifterDroit = new DigitalInput(RobotMap.SHIFTER_DROIT);
-        shifterGauche = new DigitalInput(RobotMap.SHIFTER_GAUCHE);
+        pedaleAvancer = new AnalogInput(RobotMap.ANALOG.PEDALE_AVANCER);
+        pedaleReculer = new AnalogInput(RobotMap.ANALOG.PEDALE_RECULER);
+        volant = new AnalogInput(RobotMap.ANALOG.VOLANT);
+        shifterDroit = new DigitalInput(RobotMap.DIO.SHIFTER_DROIT_BOUTON);
+        shifterGauche = new DigitalInput(RobotMap.DIO.SHIFTER_GAUCHE_BOUTON);
 
     }
 

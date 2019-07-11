@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import frc.robot.commands.DrivetrainSetShiftersCommand;
 import frc.util.VolantPedaleController;
 
 /**
@@ -16,6 +18,7 @@ public class OI {
 
     public VolantPedaleController volantPedale = new VolantPedaleController();
     public OI(){
-
+        volantPedale.getShifterDroit().whenPressed(new DrivetrainSetShiftersCommand(Value.kForward));
+        volantPedale.getShifterGauche().whenPressed(new DrivetrainSetShiftersCommand(Value.kReverse));
     }
 }

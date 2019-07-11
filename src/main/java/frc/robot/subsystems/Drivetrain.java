@@ -9,7 +9,10 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -26,19 +29,22 @@ public class Drivetrain extends Subsystem {
   public VictorSP arriereDroit;
   public VictorSP arriereGauche;
 
+  public DoubleSolenoid shifters;
+
   public Drivetrain(){
 
 
-    avantDroit = new TalonSRX(RobotMap.MOTEUR_AVANT_DROIT);
-    avantGauche = new TalonSRX(RobotMap.MOTEUR_AVANT_GAUCHE);
-    arriereDroit = new VictorSP(RobotMap.MOTEUR_ARRIERE_DROIT);
-    arriereGauche = new VictorSP(RobotMap.MOTEUR_ARRIERE_GAUCHE);
+    avantDroit = new TalonSRX(RobotMap.CAN.MOTEUR_AVANT_DROIT);
+    avantGauche = new TalonSRX(RobotMap.CAN.MOTEUR_AVANT_GAUCHE);
+    arriereDroit = new VictorSP(RobotMap.PWN.MOTEUR_ARRIERE_DROIT);
+    arriereGauche = new VictorSP(RobotMap.PWN.MOTEUR_ARRIERE_GAUCHE);
 
     avantDroit.setInverted(false);
     avantGauche.setInverted(false);
     arriereDroit.setInverted(false);
     arriereGauche.setInverted(false);
 
+    shifters = new DoubleSolenoid(RobotMap.PCM.SHIFTERS_FORWARD, RobotMap.PCM.SHIFTERS_REVERSE);
   }
 
   public void driveTank(double gauche, double droite){
@@ -55,6 +61,12 @@ public class Drivetrain extends Subsystem {
       driveTank(vitesse + rotation, vitesse);
     }
   }
+
+
+  public void setShifterPosition(Value valeur){
+    shifters.set(valeur);
+  }
+  
 
   @Override
   public void initDefaultCommand() {
