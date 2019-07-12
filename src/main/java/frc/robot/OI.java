@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import frc.robot.commands.DrivetrainSetShiftersCommand;
+import frc.util.Gamepad;
 import frc.util.VolantPedaleController;
 
 /**
@@ -16,6 +17,7 @@ import frc.util.VolantPedaleController;
  */
 public class OI {
 
+    public Gamepad gamepadDriver = new Gamepad(RobotMap.USB.DRIVER_GAMEPAD);
     public VolantPedaleController volantPedale = new VolantPedaleController();
     public OI(){
         volantPedale.getShifterDroit().whenPressed(new DrivetrainSetShiftersCommand(Value.kForward));

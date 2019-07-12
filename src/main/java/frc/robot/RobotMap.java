@@ -12,6 +12,15 @@ package frc.robot;
  */
 public interface RobotMap {
 
+    interface USB {
+        int DRIVER_GAMEPAD = 0;
+    }
+
+    interface AXES {
+        int AXE_GAUCHE = 1;
+        int AXE_DROITE = 5;
+    }
+
     interface CAN {
         int MOTEUR_AVANT_DROIT = 0;
         int MOTEUR_AVANT_GAUCHE = 0; 

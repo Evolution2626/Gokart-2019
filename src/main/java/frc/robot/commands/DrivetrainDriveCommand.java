@@ -10,6 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.RobotState;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class DrivetrainDriveCommand extends Command {
   public DrivetrainDriveCommand() {
@@ -28,7 +29,9 @@ public class DrivetrainDriveCommand extends Command {
     if (RobotState.isOperatorControl()){
       Robot.drivetrain.drivePedaleVolant(Robot.oi.volantPedale.getSpeed(),Robot.oi.volantPedale.getVolant());
     }
-
+    if (RobotState.isTest()){
+      Robot.drivetrain.driveTank(Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_GAUCHE),Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_DROITE));
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()
