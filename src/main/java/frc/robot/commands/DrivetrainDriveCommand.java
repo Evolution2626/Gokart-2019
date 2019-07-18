@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.RobotState;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.util.Range;
 
 public class DrivetrainDriveCommand extends Command {
   public DrivetrainDriveCommand() {
@@ -30,7 +31,7 @@ public class DrivetrainDriveCommand extends Command {
       Robot.drivetrain.drivePedaleVolant(Robot.oi.volantPedale.getSpeed(),Robot.oi.volantPedale.getVolant());
     }
     if (RobotState.isTest()){
-      Robot.drivetrain.driveTank(Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_GAUCHE),Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_DROITE));
+      Robot.drivetrain.driveTank(Range.threshold(0.1, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_GAUCHE)),Range.threshold(0.1, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_DROITE)));
     }
   }
 
