@@ -48,15 +48,15 @@ public class VolantPedaleController {
     }
 
     public double getPedaleAvancer(){
-        return MathHelper.map(getPedaleAvancerPotentiometre(), 0, 1023, 0, 1);
+        return MathHelper.map(getPedaleAvancerPotentiometre(), 5, 28, 0, 1);
     }
 
     public double getPedaleReculer(){
-        return MathHelper.map(getPedaleAvancerPotentiometre(), 0, 1023, 0, 1);
+        return MathHelper.map(getPedaleReculerPotentiometre(), 5, 21, 0, 1);
     }
 
     public double getVolant(){
-        return MathHelper.map(getVolantPotentiometre(), 0, 1023, -1, 1);
+        return MathHelper.map(getVolantPotentiometre(), 5, 4011, -1, 1);
     }
 
     public double getSpeed(){

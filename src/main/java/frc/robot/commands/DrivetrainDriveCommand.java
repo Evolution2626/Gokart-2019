@@ -30,7 +30,7 @@ public class DrivetrainDriveCommand extends Command {
     if (RobotState.isOperatorControl()){
       Robot.drivetrain.drivePedaleVolant(Robot.oi.volantPedale.getSpeed(),Robot.oi.volantPedale.getVolant());
     }
-    if (RobotState.isTest()){
+    if (RobotState.isAutonomous()){
       Robot.drivetrain.driveTank(Range.threshold(0.1, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_GAUCHE)),Range.threshold(0.1, Robot.oi.gamepadDriver.getRawAxis(RobotMap.AXES.AXE_DROITE)));
     }
   }

@@ -100,6 +100,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
-    Scheduler.getInstance().run();
+    //System.out.println("Valeur volant " + Robot.oi.volantPedale.getVolant());
+    System.out.println("Pedale avancer " + Robot.oi.volantPedale.getPedaleAvancer());
+    //System.out.println("Pedale reculer " + Robot.oi.volantPedale.getPedaleReculer());
+
+
+    //avancer 5-28
+    //reculer 5-21
   }
 }
