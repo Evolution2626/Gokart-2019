@@ -30,7 +30,7 @@ public class Drivetrain extends Subsystem {
   public VictorSP arriereDroit;
   public VictorSP arriereGauche;
 
-  //public DoubleSolenoid shifters;
+  public DoubleSolenoid shifters;
 
   public Drivetrain(){
 
@@ -45,7 +45,7 @@ public class Drivetrain extends Subsystem {
     arriereDroit.setInverted(false);
     arriereGauche.setInverted(false);
 
-    //shifters = new DoubleSolenoid(RobotMap.PCM.SHIFTERS_FORWARD, RobotMap.PCM.SHIFTERS_REVERSE);
+    shifters = new DoubleSolenoid(RobotMap.CAN.PCM, RobotMap.PCM.SHIFTERS_FORWARD, RobotMap.PCM.SHIFTERS_REVERSE);
   }
 
   public void driveTank(double gauche, double droite){
@@ -65,7 +65,7 @@ public class Drivetrain extends Subsystem {
 
 
   public void setShifterPosition(Value valeur){
-    //shifters.set(valeur);
+    shifters.set(valeur);
   }
   
 

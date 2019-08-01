@@ -24,6 +24,7 @@ public interface RobotMap {
     interface CAN {
         int MOTEUR_AVANT_DROIT = 10;
         int MOTEUR_AVANT_GAUCHE = 7; 
+        int PCM = 1;
     }
 
     interface PWN {
